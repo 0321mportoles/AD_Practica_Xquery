@@ -1,0 +1,6 @@
+xquery version "3.1";
+
+for $c in //sucursal/@codigo
+let $tipo_ahorros:=count(//sucursal[@codigo=$c]//cuenta[@tipo="AHORRO"])
+let $tipo_pensiones:= count(//sucursal[@codigo=$c]//cuenta[@tipo="PENSIONES"])
+return concat("Codigo de sucursal: ", $c, " - Numero de cuentas de ahorro y pensiones: ", $tipo_ahorros, " y ", $tipo_pensiones)

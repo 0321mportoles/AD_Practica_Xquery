@@ -1,0 +1,9 @@
+xquery version "3.1";
+
+for $zone in distinct-values(doc("products.xml")//produc/cod_zona)
+let $items := doc("products.xml")//produc[contains(cod_zona, $zone)]
+order by $zone
+return <zona id="{$zone}">{
+         for $i in $items
+         return $i/denominacion
+       }</zona>

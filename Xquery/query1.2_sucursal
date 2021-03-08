@@ -1,0 +1,6 @@
+xquery version "3.1";
+
+for $sucur in /sucursales/sucursal[count(cuenta) > 3] 
+return ( data($sucur/@codigo), $sucur/director/text(), $sucur/poblacion/text(), sum($sucur/cuenta/saldodebe), sum($sucur/cuenta/saldohaber))
+
+

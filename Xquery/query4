@@ -1,0 +1,6 @@
+xquery version "3.1";
+
+(<placa>{/productos/produc/denominacion[contains(., 'Placa Base')]}</placa>,
+<micro>{/productos/produc/denominacion[contains(., 'Micro')]}</micro>,
+<memoria>{/productos/produc/denominacion[contains(., 'Memoria')]}</memoria>,
+<otros>{/productos/produc/denominacion[not(contains(., 'Memoria') or contains(., 'Micro') or contains(., 'Placa Base'))]}</otros>)

@@ -1,0 +1,13 @@
+xquery version "3.1";
+
+for $p in doc('products.xml')/productos/produc
+let $pcodZone := $p/cod_zona
+group by $pcodZone
+
+
+
+return
+   <result>
+      <zona>{$pcodZone}</zona>
+      <precio>{max($p/precio)}</precio>
+   </result>
